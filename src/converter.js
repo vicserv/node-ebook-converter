@@ -12,7 +12,7 @@ parentPort.once('message', (value) => {
     if (!(fs.existsSync(inputPath))) throw new Error(`Input path ${inputPath} not found!`);
 
     const startTime = new Date();
-    let command = `ebook-convert "${inputPath}" "${outputPath}"`;
+    let command = `/Applications/calibre.app/Contents/MacOS/ebook-convert "${inputPath}" "${outputPath}"`;
 
     /* Add flag params to conversion command */
     Object.keys(process.env).forEach(key => {
